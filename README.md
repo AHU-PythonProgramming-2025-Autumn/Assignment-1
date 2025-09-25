@@ -1,11 +1,12 @@
 # Python Programming Assignment 1
 
 ## 作业内容
-- 编写一个函数 `say_hello(name: str) -> str`，返回 `"Hello, <name>!"`。
-- 例如：`say_hello("Alice")` → `"Hello, Alice!"`
+
+- 写一个程序，从标准输入读取两个整数，输出它们的和。
+- 要求必须使用 `input()`/`print()` 与用户互动。
 
 ## 提交方式
-1. 在 `src/hello.py` 中完成函数。
+1. 在 `src/add.py` 中完成函数。
 2. 提交并推送代码到仓库。
 3. GitHub Actions 会自动运行测试，测试通过即表示作业完成。
 
