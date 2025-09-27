@@ -1,4 +1,5 @@
 # tests/test_solution.py
+import os
 import subprocess
 import sys
 import src.add as add
@@ -18,7 +19,9 @@ def test_add_from_str_basic_4():
 
 def test_input_and_print():
     # 测试学生脚本确实能从 stdin 读 input 并输出正确结果
-    p = subprocess.run([sys.executable, "../src/add.py"],
+    path = os.getcwd()
+    path = os.path.join(path, "../src/add.py")
+    p = subprocess.run([sys.executable, path],
                        input="123 456\n",
                        text=True,
                        capture_output=True)
