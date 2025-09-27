@@ -3,6 +3,7 @@ import os
 import subprocess
 import sys
 import src.add as add
+from pathlib import Path
 
 def test_add_from_str_basic_1():
     assert add.add_from_str("1 2") == 3
@@ -19,8 +20,9 @@ def test_add_from_str_basic_4():
 
 def test_input_and_print():
     # 测试学生脚本确实能从 stdin 读 input 并输出正确结果
-    path = os.getcwd()
-    path = os.path.join(path, "../src/add.py")
+    current_file = Path(__file__).resolve()
+    project_root = current_file.parents[1]
+    path = os.path.join(project_root, "./src/add.py")
     p = subprocess.run([sys.executable, path],
                        input="123 456\n",
                        text=True,
